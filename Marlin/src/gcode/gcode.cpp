@@ -786,6 +786,10 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 413: M413(); break;                                  // M413: Enable/disable/query Power-Loss Recovery
         case 1000: M1000(); break;                                // M1000: Resume from power-loss
       #endif
+	  
+	  #if ENABLED(USB_DFU)
+        case 8150: M8150(); break;                                  //M8150: USB DFU for STM32F4
+      #endif
 
       default: parser.unknown_command_error(); break;
     }

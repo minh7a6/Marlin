@@ -471,7 +471,10 @@
   #include "pins_STEVAL.h"            // STM32F4                                    env:STM32F4
 #elif MB(BIGTREE_SKR_PRO_V1_1)
   #include "pins_BIGTREE_SKR_PRO_V1.1.h" // STM32F4                                 env:BIGTREE_SKR_PRO
-
+#elif MB(MINHF43D)
+  #include "pins_MINHF43D.h"            // STM32F4                                    env:STM32F4
+#elif MB(QMP32B)
+  #include "pins_QMP32B.h"            // STM32F4                                    env:STM32F4
 //
 // ARM Cortex M7
 //

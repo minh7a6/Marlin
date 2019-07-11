@@ -516,6 +516,7 @@ private:
   #if ENABLED(LCD_SET_PROGRESS_MANUALLY)
     static void M73();
   #endif
+  
 
   static void M75();
   static void M76();
@@ -891,6 +892,9 @@ private:
 
   #if ENABLED(MAX7219_GCODE)
     static void M7219();
+  #endif
+  #if ENABLED(USB_DFU)
+    static void M8150();
   #endif
 
   static void T(const uint8_t tool_index);
