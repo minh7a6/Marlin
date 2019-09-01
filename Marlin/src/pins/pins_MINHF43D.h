@@ -25,10 +25,13 @@
 #if !defined(STM32F4) && !defined(STM32F4xx)
   #error "Oops! Select an STM32F4 board in 'Tools > Board.'"
 #endif
+
 #if !AXIS_DRIVER_TYPE_X(TMC2208) || !AXIS_DRIVER_TYPE_Y(TMC2208) || !AXIS_DRIVER_TYPE_Z(TMC2208) || !AXIS_DRIVER_TYPE_E0(TMC2208)
-  #error "You must set ([XYZ]|E0)_DRIVER_TYPE to TMC2208 in Configuration.h for MINHF43D."
+  #error "You must set ([XYZ]|E0|E1)_DRIVER_TYPE to TMC2208 in Configuration.h for MINHF43D."
 #endif
-#define E2END 0xFFF // EEPROM end address (4kB)
+
+#define E2END 0x7FFF  // EEPROM end address (32kB)
+#define I2C_EEPROM
 
 #ifndef BOARD_NAME
   #define BOARD_NAME "MINHF43D"
@@ -76,11 +79,11 @@
 #define TEMP_1_PIN          PC1   // Analog Input
 #define TEMP_BED_PIN        PC2   // Analog Input
 
-#define HEATER_0_PIN        PA4
+#define HEATER_0_PIN        PA5
 #define HEATER_BED_PIN      PA6
 
 #ifndef FAN_PIN
-  #define FAN_PIN           PA5
+  #define FAN_PIN           PA4
 #endif
 
 #ifndef FAN1_PIN
@@ -115,7 +118,7 @@
 
     #define BTN_ENC           PB9   
     #define BEEPER_PIN        PB8   
-    #define SD_DETECT_PIN     PD6
+    #define SD_DETECT_PIN     -1
 
   #endif // NEWPANEL
 #endif // ULTRA_LCD

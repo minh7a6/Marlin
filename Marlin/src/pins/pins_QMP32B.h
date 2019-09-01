@@ -102,9 +102,9 @@
       #define LCD_PINS_D4     PB2
       #define BTN_EN1         PB12
       #define BTN_EN2         PB10
-      #define ST7920_DELAY_1 DELAY_NS(300)
-      #define ST7920_DELAY_2 DELAY_NS(300)
-      #define ST7920_DELAY_3 DELAY_NS(450)
+      #define ST7920_DELAY_1 DELAY_NS(400)
+      #define ST7920_DELAY_2 DELAY_NS(400)
+      #define ST7920_DELAY_3 DELAY_NS(500)
     #endif
 
     #define BTN_ENC           PB13   
